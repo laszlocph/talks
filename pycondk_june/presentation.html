@@ -1,0 +1,908 @@
+<!DOCTYPE html>
+<!--
+  Copyright 2010 Google Inc.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+     http://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License.
+
+  Original slides: Marcin Wichary (mwichary@google.com)
+  Modifications: Ernest Delgado (ernestd@google.com)
+                 Alex Russell (slightlyoff@chromium.org)
+
+  landslide modifications: Adam Zapletal (adamzap@gmail.com)
+                           Nicolas Perriault (nperriault@gmail.com)
+-->
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Introduction to Python Machine Learning <p>6th June 2013</p><p>Laszlo Fogas</p></title>
+    <!-- Styles -->
+    
+    <link rel="stylesheet" media="print" href="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/css/print.css">
+    <link rel="stylesheet" media="screen, projection" href="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/css/screen.css">
+    
+    
+    <!-- /Styles -->
+    <!-- Javascripts -->
+    
+    <script type="text/javascript" src="file:///usr/local/lib/python2.7/dist-packages/landslide/themes/default/js/slides.js"></script>
+    
+    
+    <!-- /Javascripts -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div id="current_presenter_notes">
+      <div id="presenter_note"></div>
+    </div>
+    <div class="slides">
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Introduction to Python Machine Learning <p>6th June 2013</p><p>Laszlo Fogas</p></h1></header>
+            
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              1/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Hi</h1></header>
+            
+            
+            <section><ul>
+<li>master degree, Budapest University of Technology and Economics</li>
+<li>industry background, Java</li>
+<li>data guy @ Falcon Social</li>
+<li>new to Python, amazed every single day</li>
+<li>pragmatic guy</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              2/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Today</h1></header>
+            
+            
+            <section><ul>
+<li>General Machine Learning concepts</li>
+<li>Scikit-learn basics</li>
+<li>Scikit-learn in action</li>
+</ul>
+<p>The slides and source code are downloadable at <a href="https://github.com/laszlocph/talks/pycondk_june">https://github.com/laszlocph/talks/pycondk_june</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              3/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Concepts</h1></header>
+            
+            
+            <section><p><br/>
+<br/>
+<img src="file:///home/laszlocph/talks/pycondk_june/pics/logical-flow.png" alt="Drawing" style="width: 90%;"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              4/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Concepts - Supervised Learning</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/plot_ML_flow_chart_1.png" alt="Drawing" style="width: 90%;"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              5/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Feature vectors - Spam filtering</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/spam_features.png" alt="Drawing" style="width: 90%;"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              6/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Feature vectors - Topic classification</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/topic_features.png" alt="Drawing" style="width: 90%"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              7/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Feature vectors - Vegetation prediction</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/vegetation_features.png" alt="Drawing" style="width: 90%"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              8/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>... and many more applications</h1></header>
+            
+            
+            <section><ul>
+<li>Recommendation engines<br/>
+ based on friends, preferences, or previous actions like Amazon, or "People you may know" on LinkedIn</li>
+<li>Fraud detection<br/>
+ based on usage patterns</li>
+<li>Language guessing<br/>
+ based on common character groups, word length distribution</li>
+<li>Priority inbox<br/>
+ messages from people you frequently reply to, contains certain words (like spam filtering)</li>
+<li>Sentiment analysis<br/>
+ bow, tfidf, high information words, etc</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              9/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Concepts - Unsupervised Learning</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/plot_ML_flow_chart_3.png" alt="Drawing" style="width: 90%;"/></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              10/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Concepts - Problem groups</h1></header>
+            
+            
+            <section><ul>
+<li>Supervised learning<ul>
+<li>Classification</li>
+<li>Regression</li>
+</ul>
+</li>
+<li>Unsupervised learning<ul>
+<li>Clustering</li>
+<li>Dimensionality reduction</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              11/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Today</h1></header>
+            
+            
+            <section><ul>
+<li>General Machine Learning concepts</li>
+<li>
+<h1>Scikit-learn basics</h1>
+</li>
+<li>Scikit-learn in action<ul>
+<li>Classification problem from Kaggle.com</li>
+<li>We make a submission using SVM</li>
+</ul>
+</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              12/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Scikit-learn</h1></header>
+            
+            
+            <section><ul>
+<li>open source, BSD license - commercially usable, active development</li>
+<li>Fits well to the SciPy ecosystem (based on numpy)</li>
+<li>many algorithms <a href="http://scikit-learn.org/stable/" target="_blank">http://scikit-learn.org/stable/</a><ul>
+<li>Linear models: logistic regression</li>
+<li>Support Vector Machines (SVM)</li>
+<li>Naive Bayes</li>
+<li>Decision Trees, Random Forest</li>
+<li>Nearest Neighbours</li>
+<li>KMeans</li>
+<li>Principal Component Analysis (PCA)</li>
+<li>many of them state of the art implementation</li>
+</ul>
+</li>
+<li>complex tool for the whole workflow: feature extraction, model selection</li>
+<li>considered hot these days</li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              13/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Sklearn - The promise</h1></header>
+            
+            
+            <section><p>Unified interface
+<img src="file:///home/laszlocph/talks/pycondk_june/pics/plot_ML_flow_chart_2.png" alt="Drawing" style="width: 60%;"/></p>
+<p>Pragmatic approach</p>
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">clf</span> <span class="o">=</span> <span class="n">LinearSVC</span><span class="p">()</span>
+<span class="lineno">2</span> <span class="n">clf</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingLabels</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">prediction</span> <span class="o">=</span> <span class="n">clf</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">testSet</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              14/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Sklearn - Hands on</h1></header>
+            
+            
+            <section><ul>
+<li>We need a problem</li>
+<li>Kaggle.com<ul>
+<li>crowed sourced heaven of predictive machine learning models</li>
+<li>problems to solve from companies like GE, Yelp or Facebook</li>
+<li>for knowledge, for job, for money</li>
+</ul>
+</li>
+<li>Tutorial competition <a href="http://www.kaggle.com/c/data-science-london-scikit-learn" target="_blank">http://www.kaggle.com/c/data-science-london-scikit-learn</a></li>
+</ul></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              15/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Sklearn - Cheat sheet</h1></header>
+            
+            
+            <section><p><img src="file:///home/laszlocph/talks/pycondk_june/pics/sklearn_cheat_sheet.png" alt="Drawing" style="width: 90%;"/></p>
+<p><a href="http://peekaboo-vision.blogspot.dk/2013/01/machine-learning-cheat-sheet-for-scikit.html" target="_blank">http://peekaboo-vision.blogspot.dk/2013/01/machine-learning-cheat-sheet-for-scikit.html</a></p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              16/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Sklearn - where to go?</h1></header>
+            
+            
+            <section><p>Feature extraction / selection: python package NLTK for textual data</p>
+
+<p>Dimensionality reduction</p>
+
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span><span class="o">=</span><span class="mi">12</span><span class="p">,</span><span class="n">whiten</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">trainSet</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">)</span>
+<span class="lineno">3</span> <span class="n">testSet</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">testSet</span><span class="p">)</span>
+</pre></div>
+
+<p>Cross validation</p>
+
+<div class="highlight"><pre><span class="lineno">1</span> <span class="n">svm</span><span class="o">.</span><span class="n">SVC</span><span class="p">(</span><span class="n">kernel</span><span class="o">=</span><span class="s">&#39;linear&#39;</span><span class="p">,</span> <span class="n">C</span><span class="o">=</span><span class="mi">1</span><span class="p">)</span>
+<span class="lineno">2</span> <span class="n">scores</span> <span class="o">=</span> <span class="n">cross_validation</span><span class="o">.</span><span class="n">cross_val_score</span><span class="p">(</span>
+<span class="lineno">3</span>     <span class="n">clf</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">data</span><span class="p">,</span> <span class="n">iris</span><span class="o">.</span><span class="n">target</span><span class="p">,</span> <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">)</span>
+<span class="lineno">4</span> <span class="n">array</span><span class="p">([</span> <span class="mf">1.</span>  <span class="o">...</span><span class="p">,</span>  <span class="mf">0.96</span><span class="o">...</span><span class="p">,</span>  <span class="mf">0.9</span> <span class="o">...</span><span class="p">])</span>
+<span class="lineno">5</span> 
+<span class="lineno">6</span> <span class="k">print</span> <span class="s">&quot;Accuracy: </span><span class="si">%0.2f</span><span class="s"> (+/- </span><span class="si">%0.2f</span><span class="s">)&quot;</span> <span class="o">%</span> <span class="p">(</span><span class="n">scores</span><span class="o">.</span><span class="n">mean</span><span class="p">(),</span> 
+<span class="lineno">7</span>     <span class="n">scores</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="o">/</span> <span class="mi">2</span><span class="p">)</span>
+<span class="lineno">8</span> <span class="n">Accuracy</span><span class="p">:</span> <span class="mf">0.97</span> <span class="p">(</span><span class="o">+/-</span> <span class="mf">0.02</span><span class="p">)</span>
+</pre></div>
+</section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              17/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide has_code">
+          <div class="inner">
+            
+            <header><h1>Sklearn - where to go?</h1></header>
+            
+            
+            <section><p>Parameter tuning</p>
+
+<div class="highlight"><pre><span class="lineno"> 1</span> <span class="n">param_grid</span> <span class="o">=</span> <span class="p">{</span> <span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="mi">10</span> <span class="o">**</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">[</span><span class="o">-</span><span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">]}</span>
+<span class="lineno"> 2</span> <span class="n">grid_search</span> <span class="o">=</span> <span class="n">GridSearchCV</span><span class="p">(</span><span class="n">svm</span><span class="p">,</span> <span class="n">pram_grid</span><span class="o">=</span><span class="n">param_grid</span><span class="p">,</span>
+<span class="lineno"> 3</span>  <span class="n">cv</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="lineno"> 4</span>  <span class="n">n_jobs</span><span class="o">=-</span><span class="mi">1</span><span class="p">,</span>
+<span class="lineno"> 5</span>  <span class="n">verbose</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span>
+<span class="lineno"> 6</span>  <span class="n">compute_training_score</span><span class="o">=</span><span class="bp">True</span>
+<span class="lineno"> 7</span> <span class="p">)</span>
+<span class="lineno"> 8</span> <span class="n">grid_search</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">trainingSet</span><span class="p">,</span> <span class="n">trainingLabels</span><span class="p">)</span>
+<span class="lineno"> 9</span> <span class="k">print</span><span class="p">(</span><span class="n">grid_search</span><span class="o">.</span><span class="n">best_params_</span><span class="p">)</span>
+<span class="lineno">10</span> <span class="p">{</span><span class="s">&#39;C&#39;</span><span class="p">:</span> <span class="mf">1.0</span><span class="p">}</span>
+</pre></div>
+
+<p>QA time</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              18/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+      <!-- slide source: talk.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Bonus - who to follow</h1></header>
+            
+            
+            <section><p>@ogrisel</p>
+<p>@t3kcit</p>
+<p>@jakevdp</p>
+<p>@japerk</p>
+<p>@siah</p></section>
+            
+          </div>
+          <div class="presenter_notes">
+            <header><h1>Presenter Notes</h1></header>
+            <section>
+            
+            </section>
+          </div>
+          <footer>
+            
+            <aside class="source">
+              Source: <a href="talk.md">talk.md</a>
+            </aside>
+            
+            <aside class="page_number">
+              19/19
+            </aside>
+          </footer>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <div id="toc" class="sidebar hidden">
+    <h2>Table of Contents</h2>
+    <table>
+      <caption>Table of Contents</caption>
+      
+      <tr id="toc-row-1">
+        <th><a href="#slide1">Introduction to Python Machine Learning <p>6th June 2013</p><p>Laszlo Fogas</p></a></th>
+        <td><a href="#slide1">1</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-2">
+        <th><a href="#slide2">Hi</a></th>
+        <td><a href="#slide2">2</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-3">
+        <th><a href="#slide3">Today</a></th>
+        <td><a href="#slide3">3</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-4">
+        <th><a href="#slide4">Concepts</a></th>
+        <td><a href="#slide4">4</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-5">
+        <th><a href="#slide5">Concepts - Supervised Learning</a></th>
+        <td><a href="#slide5">5</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-6">
+        <th><a href="#slide6">Feature vectors - Spam filtering</a></th>
+        <td><a href="#slide6">6</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-7">
+        <th><a href="#slide7">Feature vectors - Topic classification</a></th>
+        <td><a href="#slide7">7</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-8">
+        <th><a href="#slide8">Feature vectors - Vegetation prediction</a></th>
+        <td><a href="#slide8">8</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-9">
+        <th><a href="#slide9">... and many more applications</a></th>
+        <td><a href="#slide9">9</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-10">
+        <th><a href="#slide10">Concepts - Unsupervised Learning</a></th>
+        <td><a href="#slide10">10</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-11">
+        <th><a href="#slide11">Concepts - Problem groups</a></th>
+        <td><a href="#slide11">11</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-12">
+        <th><a href="#slide12">Today</a></th>
+        <td><a href="#slide12">12</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-13">
+        <th><a href="#slide13">Scikit-learn</a></th>
+        <td><a href="#slide13">13</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-14">
+        <th><a href="#slide14">Sklearn - The promise</a></th>
+        <td><a href="#slide14">14</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-15">
+        <th><a href="#slide15">Sklearn - Hands on</a></th>
+        <td><a href="#slide15">15</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-16">
+        <th><a href="#slide16">Sklearn - Cheat sheet</a></th>
+        <td><a href="#slide16">16</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-17">
+        <th><a href="#slide17">Sklearn - where to go?</a></th>
+        <td><a href="#slide17">17</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-18">
+        <th><a href="#slide18">Sklearn - where to go?</a></th>
+        <td><a href="#slide18">18</a></td>
+      </tr>
+      
+      
+      <tr id="toc-row-19">
+        <th><a href="#slide19">Bonus - who to follow</a></th>
+        <td><a href="#slide19">19</a></td>
+      </tr>
+      
+      
+    </table>
+  </div>
+  
+  <div id="help" class="sidebar hidden">
+    <h2>Help</h2>
+    <table>
+      <caption>Help</caption>
+      <tr>
+        <th>Table of Contents</th>
+        <td>t</td>
+      </tr>
+      <tr>
+        <th>Exposé</th>
+        <td>ESC</td>
+      </tr>
+      <tr>
+        <th>Full screen slides</th>
+        <td>e</td>
+      </tr>
+      <tr>
+        <th>Presenter View</th>
+        <td>p</td>
+      </tr>
+      <tr>
+        <th>Source Files</th>
+        <td>s</td>
+      </tr>
+      <tr>
+        <th>Slide Numbers</th>
+        <td>n</td>
+      </tr>
+      <tr>
+        <th>Toggle screen blanking</th>
+        <td>b</td>
+      </tr>
+      <tr>
+        <th>Show/hide slide context</th>
+        <td>c</td>
+      </tr>
+      <tr>
+        <th>Notes</th>
+        <td>2</td>
+      </tr>
+      <tr>
+        <th>Help</th>
+        <td>h</td>
+      </tr>
+    </table>
+  </div>
+  <script>main()</script>
+</body>
+</html>
