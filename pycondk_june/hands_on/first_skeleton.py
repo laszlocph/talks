@@ -3,6 +3,7 @@
 import numpy as np
 import sklearn
 from sklearn.svm import LinearSVC
+from sklearn.svm import SVC
 from numpy import genfromtxt
 
 
