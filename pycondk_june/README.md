@@ -1,4 +1,4 @@
-Materials for "Introduction to Python Machine Learning" talk held at pycon.dk meetup at 6th June 2013
+Materials for "Introduction to Python Machine Learning" talk held at pycon.dk meetup on 6th June 2013
 
 How to compile presentation
 ---------------------------
