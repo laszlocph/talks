@@ -1,4 +1,10 @@
 Materials for "Introduction to Python Machine Learning" talk held at pycon.dk meetup on 6th June 2013
+-----------------------------------------------------------------------------------------------------
+
+To view it online
+-----------------
+
+http://htmlpreview.github.io/?https://github.com/laszlocph/talks/blob/master/pycondk_june/presentation.html#slide19
 
 How to compile presentation
 ---------------------------
