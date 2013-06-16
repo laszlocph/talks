@@ -4,7 +4,7 @@ Materials for "Introduction to Python Machine Learning" talk held at pycon.dk me
 To view it online
 -----------------
 
-http://htmlpreview.github.io/?https://github.com/laszlocph/talks/blob/master/pycondk_june/presentation.html#slide19
+http://htmlpreview.github.io/?https://github.com/laszlocph/talks/blob/master/pycondk_june/presentation.html
 
 How to compile presentation
 ---------------------------
